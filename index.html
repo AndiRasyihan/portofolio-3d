@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Andi Rasyihan Jawahir — Web &amp; Android Developer</title>
+  <meta name="description" content="Portofolio Andi Rasyihan Jawahir — mahasiswa Informatika &amp; developer yang membangun aplikasi web, Android, dan solusi berbasis AI dari Makassar." />
+  <meta name="author" content="Andi Rasyihan Jawahir" />
+  <meta name="theme-color" content="#04060f" />
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  <link rel="canonical" href="https://andirasyihan.github.io/portofolio-3d/" />
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Andi Rasyihan Jawahir — Web & Android Developer" />
+  <meta property="og:description" content="Portofolio interaktif 3D: proyek AI, web, dan Android dari mahasiswa Informatika FT Unismuh Makassar." />
+  <meta property="og:url" content="https://andirasyihan.github.io/portofolio-3d/" />
+  <meta property="og:image" content="https://andirasyihan.github.io/portofolio-3d/img/me.jpg" />
+  <meta property="og:locale" content="id_ID" />
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Andi Rasyihan Jawahir — Web & Android Developer" />
+  <meta name="twitter:description" content="Portofolio interaktif 3D: proyek AI, web, dan Android." />
+  <meta name="twitter:image" content="https://andirasyihan.github.io/portofolio-3d/img/me.jpg" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Andi Rasyihan Jawahir",
+    "url": "https://andirasyihan.github.io/portofolio-3d/",
+    "image": "https://andirasyihan.github.io/portofolio-3d/img/me.jpg",
+    "jobTitle": "Web & Android Developer",
+    "email": "mailto:andirasyihan43289@gmail.com",
+    "address": { "@type": "PostalAddress", "addressLocality": "Makassar", "addressCountry": "ID" },
+    "alumniOf": "Universitas Muhammadiyah Makassar",
+    "sameAs": [
+      "https://github.com/AndiRasyihan",
+      "https://instagram.com/andi_rasyihan",
+      "https://www.linkedin.com/in/andi-rasyihan-0296833aa/"
+    ]
+  }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@500;700;800&family=Space+Grotesk:wght@300;400;500;600&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ══════════ PRELOADER ══════════ -->
+  <div id="preloader">
+    <div class="preloader-inner">
+      <div class="preloader-logo">R<span>.</span></div>
+      <div class="preloader-count" id="preloaderCount">0%</div>
+      <div class="preloader-bar"><div class="preloader-fill" id="preloaderFill"></div></div>
+      <div class="preloader-label">MEMUAT SISTEM…</div>
+    </div>
+  </div>
+
+  <!-- ══════════ KURSOR KUSTOM ══════════ -->
+  <div class="cursor" id="cursor"></div>
+  <div class="cursor-dot" id="cursorDot"></div>
+
+  <!-- ══════════ LATAR 3D ══════════ -->
+  <canvas id="bg-canvas"></canvas>
+  <div class="grid-overlay"></div>
+  <div class="orb orb-1"></div>
+  <div class="orb orb-2"></div>
+  <div class="orb orb-3"></div>
+  <div class="scroll-progress" id="scrollProgress"></div>
+
+  <!-- ══════════ NAVBAR ══════════ -->
+  <header class="navbar" id="navbar">
+    <a href="#home" class="nav-logo magnetic">RASYIHAN<span>.dev</span></a>
+    <nav class="nav-links" id="navLinks">
+      <a href="#home" class="nav-link active">Beranda</a>
+      <a href="#tentang" class="nav-link">Tentang</a>
+      <a href="#keahlian" class="nav-link">Keahlian</a>
+      <a href="#proyek" class="nav-link">Proyek</a>
+      <a href="#kontak" class="nav-link">Kontak</a>
+      <a href="#kontak" class="btn btn-nav">Rekrut Saya</a>
+    </nav>
+    <button class="hamburger" id="hamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </header>
+
+  <main>
+    <!-- ══════════ HERO ══════════ -->
+    <section id="home" class="hero">
+      <div class="container hero-grid">
+        <div class="hero-text">
+          <div class="hero-badge"><span class="pulse-dot"></span> TERSEDIA UNTUK PROYEK BARU</div>
+          <h1>
+            <span class="hero-hello">Halo, saya</span>
+            <span class="hero-name glitch" data-text="RASYIHAN">RASYIHAN</span>
+          </h1>
+          <div class="hero-typing">
+            <span class="typing-prefix">&gt;_</span>
+            <span id="typingText"></span><span class="caret"></span>
+          </div>
+          <p class="hero-desc">
+            Mahasiswa Informatika yang membangun aplikasi Android, mengotomasi hal-hal
+            membosankan dengan Python, dan mendesain antarmuka yang bikin orang berhenti scroll.
+          </p>
+          <div class="hero-cta">
+            <a href="#proyek" class="btn btn-primary magnetic">Lihat Karya <span class="btn-arrow">→</span></a>
+            <a href="CV_Andi_Rasyihan_Jawahir.pdf" download class="btn btn-ghost magnetic">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" width="17" height="17"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="m7 10 5 5 5-5"/><path d="M12 15V3"/></svg>
+              Unduh CV
+            </a>
+          </div>
+          <div class="hero-social">
+            <a href="https://github.com/AndiRasyihan" target="_blank" rel="noopener" aria-label="GitHub" class="social-link">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M9 19c-4.3 1.4-4.3-2.5-6-3m12 5v-3.5c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 0 0-1.3-3.2 4.2 4.2 0 0 0-.1-3.2s-1.1-.3-3.5 1.3a12.3 12.3 0 0 0-6.2 0C6.5 2.8 5.4 3.1 5.4 3.1a4.2 4.2 0 0 0-.1 3.2A4.6 4.6 0 0 0 4 9.5c0 4.6 2.7 5.7 5.5 6-.6.6-.6 1.2-.5 2V21"/></svg>
+            </a>
+            <a href="https://instagram.com/andi_rasyihan" target="_blank" rel="noopener" aria-label="Instagram" class="social-link">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.5" fill="currentColor"/></svg>
+            </a>
+            <a href="https://www.linkedin.com/in/andi-rasyihan-0296833aa/" target="_blank" rel="noopener" aria-label="LinkedIn" class="social-link">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4V8h4v2a6 6 0 0 1 2-2Z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+            </a>
+            <a href="https://api.whatsapp.com/send?phone=6282259851481&text=Halo%20Rasyihan!" target="_blank" rel="noopener" aria-label="WhatsApp" class="social-link">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 21l1.65-3.8a9 9 0 1 1 3.4 2.9L3 21"/><path d="M9 10a.5.5 0 0 0 1 0V9a.5.5 0 0 0-1 0v1a5 5 0 0 0 5 5h1a.5.5 0 0 0 0-1h-1a.5.5 0 0 0 0 1"/></svg>
+            </a>
+            <a href="mailto:andirasyihan43289@gmail.com" aria-label="Email" class="social-link">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 6L22 7"/></svg>
+            </a>
+            <span class="social-line"></span>
+            <span class="social-label">IKUTI SAYA</span>
+          </div>
+        </div>
+
+        <div class="hero-visual">
+          <div class="cube-wrap">
+            <div class="cube-ring ring-1"></div>
+            <div class="cube-ring ring-2"></div>
+            <div class="cube">
+              <div class="cube-face face-front">&lt;/&gt;</div>
+              <div class="cube-face face-back">PY</div>
+              <div class="cube-face face-right">KT</div>
+              <div class="cube-face face-left">JS</div>
+              <div class="cube-face face-top">UI</div>
+              <div class="cube-face face-bottom">GIT</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <a href="#tentang" class="scroll-indicator" aria-label="Gulir ke bawah">
+        <div class="mouse"><div class="wheel"></div></div>
+        <span>SCROLL</span>
+      </a>
+    </section>
+
+    <!-- ══════════ MARQUEE ══════════ -->
+    <div class="marquee" aria-hidden="true">
+      <div class="marquee-track">
+        <span>PYTHON ✦ KOTLIN ✦ JAVASCRIPT ✦ ANDROID ✦ FIREBASE ✦ THREE.JS ✦ UI/UX ✦ GIT ✦&nbsp;</span>
+        <span>PYTHON ✦ KOTLIN ✦ JAVASCRIPT ✦ ANDROID ✦ FIREBASE ✦ THREE.JS ✦ UI/UX ✦ GIT ✦&nbsp;</span>
+      </div>
+    </div>
+
+    <!-- ══════════ TENTANG ══════════ -->
+    <section id="tentang" class="section">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="kicker">01 // TENTANG SAYA</span>
+          <h2>Manusia di balik <span class="grad-text">layar</span></h2>
+        </div>
+        <div class="about-grid">
+          <div class="glass-card about-card reveal">
+            <div class="card-corners"><i></i><i></i><i></i><i></i></div>
+            <div class="about-profile">
+              <img src="img/me.jpg" alt="Foto Andi Rasyihan Jawahir" class="about-avatar" />
+              <div>
+                <span class="about-name">Andi Rasyihan Jawahir</span>
+                <a href="https://github.com/AndiRasyihan" target="_blank" rel="noopener" class="about-handle">@AndiRasyihan</a>
+              </div>
+              <a href="CV_Andi_Rasyihan_Jawahir.pdf" download class="about-cv magnetic">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" width="15" height="15"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="m7 10 5 5 5-5"/><path d="M12 15V3"/></svg>
+                CV
+              </a>
+            </div>
+            <p class="about-lead">
+              Saya <strong>Andi Rasyihan Jawahir</strong> — mahasiswa Informatika di
+              Fakultas Teknik Unismuh Makassar yang percaya bahwa kode terbaik adalah
+              kode yang <em>terasa</em>, bukan cuma berjalan.
+            </p>
+            <p>
+              Perjalanan saya dimulai dari proyek web sekolah, lalu berkembang menjadi kecintaan
+              membangun perangkat lunak utuh: aplikasi Android dengan Kotlin &amp; Firebase,
+              sistem berbasis AI seperti computer vision dan deep learning, sampai web interaktif
+              seperti yang sedang kamu lihat sekarang.
+            </p>
+            <p>
+              Filosofi saya sederhana: <span class="mono-accent">estetika + fungsi = pengalaman</span>.
+              Setiap piksel dan setiap baris kode harus punya alasan untuk ada.
+            </p>
+          </div>
+          <div class="stats-grid">
+            <div class="glass-card stat-card reveal">
+              <div class="stat-num" data-target="20">0</div>
+              <div class="stat-plus">+</div>
+              <div class="stat-label">Repositori GitHub</div>
+            </div>
+            <div class="glass-card stat-card reveal">
+              <div class="stat-num" data-target="10">0</div>
+              <div class="stat-plus">+</div>
+              <div class="stat-label">Teknologi Dikuasai</div>
+            </div>
+            <div class="glass-card stat-card reveal">
+              <div class="stat-num" data-target="3">0</div>
+              <div class="stat-plus">+</div>
+              <div class="stat-label">Tahun Ngoprek</div>
+            </div>
+            <div class="glass-card stat-card reveal">
+              <div class="stat-num stat-infinity">∞</div>
+              <div class="stat-label">Rasa Penasaran</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════ KEAHLIAN ══════════ -->
+    <section id="keahlian" class="section">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="kicker">02 // KEAHLIAN</span>
+          <h2>Senjata di <span class="grad-text">arsenal</span> saya</h2>
+        </div>
+        <div class="skills-grid">
+          <div class="glass-card skill-card reveal" style="--lvl: 90%">
+            <div class="skill-icon">Py</div>
+            <div class="skill-info">
+              <div class="skill-top"><h3>Python</h3><span class="skill-pct">90%</span></div>
+              <div class="skill-bar"><div class="skill-fill"></div></div>
+            </div>
+          </div>
+          <div class="glass-card skill-card reveal" style="--lvl: 85%">
+            <div class="skill-icon">Kt</div>
+            <div class="skill-info">
+              <div class="skill-top"><h3>Kotlin &amp; Android</h3><span class="skill-pct">85%</span></div>
+              <div class="skill-bar"><div class="skill-fill"></div></div>
+            </div>
+          </div>
+          <div class="glass-card skill-card reveal" style="--lvl: 88%">
+            <div class="skill-icon">&lt;&gt;</div>
+            <div class="skill-info">
+              <div class="skill-top"><h3>HTML &amp; CSS</h3><span class="skill-pct">88%</span></div>
+              <div class="skill-bar"><div class="skill-fill"></div></div>
+            </div>
+          </div>
+          <div class="glass-card skill-card reveal" style="--lvl: 80%">
+            <div class="skill-icon">Js</div>
+            <div class="skill-info">
+              <div class="skill-top"><h3>JavaScript</h3><span class="skill-pct">80%</span></div>
+              <div class="skill-bar"><div class="skill-fill"></div></div>
+            </div>
+          </div>
+          <div class="glass-card skill-card reveal" style="--lvl: 75%">
+            <div class="skill-icon">Fb</div>
+            <div class="skill-info">
+              <div class="skill-top"><h3>Firebase</h3><span class="skill-pct">75%</span></div>
+              <div class="skill-bar"><div class="skill-fill"></div></div>
+            </div>
+          </div>
+          <div class="glass-card skill-card reveal" style="--lvl: 70%">
+            <div class="skill-icon">Jv</div>
+            <div class="skill-info">
+              <div class="skill-top"><h3>Java</h3><span class="skill-pct">70%</span></div>
+              <div class="skill-bar"><div class="skill-fill"></div></div>
+            </div>
+          </div>
+          <div class="glass-card skill-card reveal" style="--lvl: 85%">
+            <div class="skill-icon">Gt</div>
+            <div class="skill-info">
+              <div class="skill-top"><h3>Git &amp; GitHub</h3><span class="skill-pct">85%</span></div>
+              <div class="skill-bar"><div class="skill-fill"></div></div>
+            </div>
+          </div>
+          <div class="glass-card skill-card reveal" style="--lvl: 78%">
+            <div class="skill-icon">Ux</div>
+            <div class="skill-info">
+              <div class="skill-top"><h3>UI/UX Design</h3><span class="skill-pct">78%</span></div>
+              <div class="skill-bar"><div class="skill-fill"></div></div>
+            </div>
+          </div>
+          <div class="glass-card skill-card reveal" style="--lvl: 74%">
+            <div class="skill-icon">Php</div>
+            <div class="skill-info">
+              <div class="skill-top"><h3>PHP</h3><span class="skill-pct">74%</span></div>
+              <div class="skill-bar"><div class="skill-fill"></div></div>
+            </div>
+          </div>
+          <div class="glass-card skill-card reveal" style="--lvl: 72%">
+            <div class="skill-icon">AI</div>
+            <div class="skill-info">
+              <div class="skill-top"><h3>Machine Learning</h3><span class="skill-pct">72%</span></div>
+              <div class="skill-bar"><div class="skill-fill"></div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════ PROYEK ══════════ -->
+    <section id="proyek" class="section">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="kicker">03 // PROYEK PILIHAN</span>
+          <h2>Karya yang saya <span class="grad-text">banggakan</span></h2>
+        </div>
+        <div class="projects-grid">
+          <a href="https://github.com/AndiRasyihan/the_rinra_project" target="_blank" rel="noopener" class="glass-card project-card reveal" data-tilt>
+            <div class="project-top">
+              <span class="project-num">01</span>
+              <span class="project-arrow">↗</span>
+            </div>
+            <h3>The Rinra Makassar</h3>
+            <p>Website profil hotel premium dengan konsep urban resort, integrasi mall, dan panduan wisata lokal Makassar.</p>
+            <div class="project-tags">
+              <span>PHP</span><span>Web Design</span><span>Responsif</span>
+            </div>
+          </a>
+          <a href="https://github.com/AndiRasyihan/Scan_Plat_Ai" target="_blank" rel="noopener" class="glass-card project-card reveal" data-tilt>
+            <div class="project-top">
+              <span class="project-num">02</span>
+              <span class="project-arrow">↗</span>
+            </div>
+            <h3>Scan Plat AI</h3>
+            <p>Sistem deteksi &amp; pembacaan plat nomor kendaraan otomatis berbasis computer vision — kamera melihat, AI membaca.</p>
+            <div class="project-tags">
+              <span>AI</span><span>Computer Vision</span><span>Web</span>
+            </div>
+          </a>
+          <a href="https://github.com/AndiRasyihan/DeepLearning_DiabetesAI" target="_blank" rel="noopener" class="glass-card project-card reveal" data-tilt>
+            <div class="project-top">
+              <span class="project-num">03</span>
+              <span class="project-arrow">↗</span>
+            </div>
+            <h3>DiabetesAI</h3>
+            <p>Model deep learning untuk memprediksi risiko diabetes dari data medis — kecerdasan buatan untuk kesehatan.</p>
+            <div class="project-tags">
+              <span>Python</span><span>Deep Learning</span><span>AI</span>
+            </div>
+          </a>
+          <a href="https://github.com/AndiRasyihan?tab=repositories" target="_blank" rel="noopener" class="glass-card project-card reveal" data-tilt>
+            <div class="project-top">
+              <span class="project-num">04</span>
+              <span class="project-arrow">↗</span>
+            </div>
+            <h3>Dia Resto &amp; Cafe</h3>
+            <p>Aplikasi E-Menu modern dengan input nomor meja, filter kategori makanan/minuman, dan keranjang pesanan interaktif.</p>
+            <div class="project-tags">
+              <span>JavaScript</span><span>E-Menu</span><span>UI/UX</span>
+            </div>
+          </a>
+          <a href="https://github.com/AndiRasyihan/wedding" target="_blank" rel="noopener" class="glass-card project-card reveal" data-tilt>
+            <div class="project-top">
+              <span class="project-num">05</span>
+              <span class="project-arrow">↗</span>
+            </div>
+            <h3>Digital Invitation</h3>
+            <p>Undangan pernikahan digital dengan fitur RSVP, peta lokasi interaktif, dan animasi visual yang estetik.</p>
+            <div class="project-tags">
+              <span>HTML</span><span>CSS</span><span>Animasi</span>
+            </div>
+          </a>
+          <a href="https://github.com/AndiRasyihan/uts-kriptografi-login-system" target="_blank" rel="noopener" class="glass-card project-card reveal" data-tilt>
+            <div class="project-top">
+              <span class="project-num">06</span>
+              <span class="project-arrow">↗</span>
+            </div>
+            <h3>Kriptografi Login System</h3>
+            <p>Sistem autentikasi dengan enkripsi kriptografi — melindungi kredensial pengguna dari mata-mata digital.</p>
+            <div class="project-tags">
+              <span>Python</span><span>Kriptografi</span><span>Keamanan</span>
+            </div>
+          </a>
+          <a href="https://github.com/AndiRasyihan/madrasahconnect" target="_blank" rel="noopener" class="glass-card project-card reveal" data-tilt>
+            <div class="project-top">
+              <span class="project-num">07</span>
+              <span class="project-arrow">↗</span>
+            </div>
+            <h3>MadrasahConnect</h3>
+            <p>Platform web yang menghubungkan ekosistem madrasah — informasi, komunikasi, dan layanan dalam satu pintu digital.</p>
+            <div class="project-tags">
+              <span>HTML</span><span>CSS</span><span>Web Platform</span>
+            </div>
+          </a>
+          <a href="https://github.com/AndiRasyihan" target="_blank" rel="noopener" class="glass-card project-card reveal" data-tilt>
+            <div class="project-top">
+              <span class="project-num">08</span>
+              <span class="project-arrow">↗</span>
+            </div>
+            <h3>MyDay</h3>
+            <p>Aplikasi Android jurnal &amp; produktivitas harian dengan sinkronisasi cloud real-time dan desain Material 3 yang bersih.</p>
+            <div class="project-tags">
+              <span>Kotlin</span><span>Firebase</span><span>Material 3</span>
+            </div>
+          </a>
+          <a href="https://github.com/AndiRasyihan/portofolio-3d" target="_blank" rel="noopener" class="glass-card project-card reveal" data-tilt>
+            <div class="project-top">
+              <span class="project-num">09</span>
+              <span class="project-arrow">↗</span>
+            </div>
+            <h3>Portofolio 3D</h3>
+            <p>Situs yang sedang kamu jelajahi — partikel WebGL, geometri wireframe, glassmorphism, dan interaksi magnetik.</p>
+            <div class="project-tags">
+              <span>Three.js</span><span>WebGL</span><span>CSS 3D</span>
+            </div>
+          </a>
+        </div>
+        <div class="projects-cta reveal">
+          <a href="https://github.com/AndiRasyihan?tab=repositories" target="_blank" rel="noopener" class="btn btn-ghost magnetic">Jelajahi 22 Repositori di GitHub <span class="btn-arrow">→</span></a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════ PERJALANAN ══════════ -->
+    <section id="perjalanan" class="section">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="kicker">04 // PERJALANAN</span>
+          <h2>Lini masa <span class="grad-text">evolusi</span></h2>
+        </div>
+        <div class="timeline">
+          <div class="timeline-item reveal">
+            <div class="timeline-dot"></div>
+            <div class="glass-card timeline-card">
+              <span class="timeline-year">2023</span>
+              <h3>Web Pertama</h3>
+              <p>Merilis situs web pertama saat kelas 11 — awal perkenalan dengan HTML, CSS, dan dunia pengembangan web.</p>
+            </div>
+          </div>
+          <div class="timeline-item reveal">
+            <div class="timeline-dot"></div>
+            <div class="glass-card timeline-card">
+              <span class="timeline-year">2024</span>
+              <h3>Proyek UKK &amp; Masuk Kuliah</h3>
+              <p>Menuntaskan rangkaian proyek UKK berbasis PHP full-stack, lalu resmi menjadi mahasiswa Informatika FT Unismuh Makassar.</p>
+            </div>
+          </div>
+          <div class="timeline-item reveal">
+            <div class="timeline-dot"></div>
+            <div class="glass-card timeline-card">
+              <span class="timeline-year">2025</span>
+              <h3>Eksplorasi Meluas</h3>
+              <p>Mendalami algoritma dengan Java, mencicipi Next.js &amp; TypeScript, membangun proyek web PHP, hingga aplikasi Android MyDay.</p>
+            </div>
+          </div>
+          <div class="timeline-item reveal">
+            <div class="timeline-dot"></div>
+            <div class="glass-card timeline-card">
+              <span class="timeline-year">2026</span>
+              <h3>Era AI &amp; Keamanan</h3>
+              <p>Terjun ke deep learning (DiabetesAI), computer vision (Scan Plat AI), kriptografi, dan platform MadrasahConnect.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════ KONTAK ══════════ -->
+    <section id="kontak" class="section">
+      <div class="container">
+        <div class="section-head center reveal">
+          <span class="kicker">05 // KONTAK</span>
+          <h2>Mari bangun sesuatu yang <span class="grad-text">luar biasa</span></h2>
+          <p class="section-sub">Punya ide proyek, tawaran kolaborasi, atau sekadar ingin menyapa? Kotak masuk saya selalu terbuka.</p>
+        </div>
+        <div class="contact-grid">
+          <div class="contact-info">
+            <a href="mailto:andirasyihan43289@gmail.com" class="glass-card contact-item reveal">
+              <div class="contact-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 6L22 7"/></svg>
+              </div>
+              <div><span class="contact-label">EMAIL</span><span class="contact-value">andirasyihan43289@gmail.com</span></div>
+            </a>
+            <a href="https://github.com/AndiRasyihan" target="_blank" rel="noopener" class="glass-card contact-item reveal">
+              <div class="contact-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M9 19c-4.3 1.4-4.3-2.5-6-3m12 5v-3.5c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 0 0-1.3-3.2 4.2 4.2 0 0 0-.1-3.2s-1.1-.3-3.5 1.3a12.3 12.3 0 0 0-6.2 0C6.5 2.8 5.4 3.1 5.4 3.1a4.2 4.2 0 0 0-.1 3.2A4.6 4.6 0 0 0 4 9.5c0 4.6 2.7 5.7 5.5 6-.6.6-.6 1.2-.5 2V21"/></svg>
+              </div>
+              <div><span class="contact-label">GITHUB</span><span class="contact-value">github.com/AndiRasyihan</span></div>
+            </a>
+            <a href="https://api.whatsapp.com/send?phone=6282259851481&text=Halo%20Rasyihan!" target="_blank" rel="noopener" class="glass-card contact-item reveal">
+              <div class="contact-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 21l1.65-3.8a9 9 0 1 1 3.4 2.9L3 21"/></svg>
+              </div>
+              <div><span class="contact-label">WHATSAPP</span><span class="contact-value">+62 822-5985-1481</span></div>
+            </a>
+            <a href="https://www.linkedin.com/in/andi-rasyihan-0296833aa/" target="_blank" rel="noopener" class="glass-card contact-item reveal">
+              <div class="contact-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4V8h4v2a6 6 0 0 1 2-2Z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+              </div>
+              <div><span class="contact-label">LINKEDIN</span><span class="contact-value">Andi Rasyihan Jawahir</span></div>
+            </a>
+            <a href="https://instagram.com/andi_rasyihan" target="_blank" rel="noopener" class="glass-card contact-item reveal">
+              <div class="contact-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.5" fill="currentColor"/></svg>
+              </div>
+              <div><span class="contact-label">INSTAGRAM</span><span class="contact-value">@andi_rasyihan</span></div>
+            </a>
+            <div class="glass-card contact-item reveal">
+              <div class="contact-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+              </div>
+              <div><span class="contact-label">LOKASI</span><span class="contact-value">Makassar, Indonesia</span></div>
+            </div>
+          </div>
+          <form class="glass-card contact-form reveal" id="contactForm">
+            <div class="form-row">
+              <div class="form-group">
+                <label for="nama">NAMA</label>
+                <input type="text" id="nama" name="nama" placeholder="Nama kamu" required />
+              </div>
+              <div class="form-group">
+                <label for="email">EMAIL</label>
+                <input type="email" id="email" name="email" placeholder="email@kamu.com" required />
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="pesan">PESAN</label>
+              <textarea id="pesan" name="pesan" rows="5" placeholder="Ceritakan ide kerennya…" required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary btn-full magnetic">Kirim Pesan <span class="btn-arrow">→</span></button>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ══════════ FOOTER ══════════ -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <span class="footer-logo">RASYIHAN<span>.dev</span></span>
+      <span class="footer-note">Dirakit dengan kopi &amp; kode — © 2026 Andi Rasyihan Jawahir</span>
+      <a href="#home" class="footer-top magnetic">KEMBALI KE ATAS ↑</a>
+    </div>
+  </footer>
+
+  <div id="toast"></div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
