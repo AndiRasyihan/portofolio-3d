@@ -281,7 +281,7 @@ const I18N = {
       "Aplikasi Android jurnal & produktivitas harian dengan sinkronisasi cloud real-time dan desain Material 3 yang bersih.",
     p_porto:
       "Situs yang sedang kamu jelajahi — partikel WebGL, geometri wireframe, glassmorphism, dan interaksi magnetik.",
-    cta_repos: "Jelajahi 22 Repositori di GitHub",
+    cta_repos: "Jelajahi 27 Repositori di GitHub",
     k_journey: "04 // PERJALANAN",
     h_journey: 'Lini masa <span class="grad-text">evolusi</span>',
     t1_h: "Web Pertama",
@@ -377,7 +377,7 @@ const I18N = {
       "An Android daily journal & productivity app with real-time cloud sync and a clean Material 3 design.",
     p_porto:
       "The site you're exploring right now — WebGL particles, wireframe geometry, glassmorphism, and magnetic interactions.",
-    cta_repos: "Explore 22 Repositories on GitHub",
+    cta_repos: "Explore 27 Repositories on GitHub",
     k_journey: "04 // JOURNEY",
     h_journey: 'A timeline of <span class="grad-text">evolution</span>',
     t1_h: "First Website",
