@@ -237,7 +237,7 @@ const I18N = {
     k_about: "01 // TENTANG SAYA",
     h_about: 'Manusia di balik <span class="grad-text">layar</span>',
     about_p1:
-      'Saya <strong>Andi Rasyihan Jawahir</strong> — mahasiswa Informatika di Fakultas Teknik Unismuh Makassar yang percaya bahwa kode terbaik adalah kode yang <em>terasa</em>, bukan cuma berjalan.',
+      "Saya <strong>Andi Rasyihan Jawahir</strong> — mahasiswa Informatika di Fakultas Teknik Unismuh Makassar yang percaya bahwa kode terbaik adalah kode yang <em>terasa</em>, bukan cuma berjalan.",
     about_p2:
       "Perjalanan saya dimulai dari proyek web sekolah, lalu berkembang menjadi kecintaan membangun perangkat lunak utuh: aplikasi Android dengan Kotlin & Firebase, sistem berbasis AI seperti computer vision dan deep learning, sampai web interaktif seperti yang sedang kamu lihat sekarang.",
     about_p3:
@@ -389,7 +389,8 @@ const I18N = {
     t4_h: "The AI & Security Era",
     t4_p: "Ventured into deep learning (DiabetesAI), computer vision (Scan Plat AI), cryptography, and the MadrasahConnect platform.",
     k_contact: "05 // CONTACT",
-    h_contact: 'Let\'s build something <span class="grad-text">extraordinary</span>',
+    h_contact:
+      'Let\'s build something <span class="grad-text">extraordinary</span>',
     contact_sub:
       "Got a project idea, a collaboration offer, or just want to say hi? My inbox is always open.",
     lbl_location: "LOCATION",
