@@ -216,23 +216,243 @@ const reducedMotion = window.matchMedia(
   });
 })();
 
+/* ══════════ BAHASA (ID / EN) ══════════ */
+
+const I18N = {
+  id: {
+    preload: "MEMUAT SISTEM…",
+    nav_home: "Beranda",
+    nav_about: "Tentang",
+    nav_skills: "Keahlian",
+    nav_projects: "Proyek",
+    nav_contact: "Kontak",
+    nav_hire: "Rekrut Saya",
+    hero_badge: "TERSEDIA UNTUK PROYEK BARU",
+    hero_hello: "Halo, saya",
+    hero_desc:
+      "Mahasiswa Informatika yang membangun aplikasi Android, mengotomasi hal-hal membosankan dengan Python, dan mendesain antarmuka yang bikin orang berhenti scroll.",
+    cta_work: "Lihat Karya",
+    cta_cv: "Unduh CV",
+    social_follow: "IKUTI SAYA",
+    k_about: "01 // TENTANG SAYA",
+    h_about: 'Manusia di balik <span class="grad-text">layar</span>',
+    about_p1:
+      'Saya <strong>Andi Rasyihan Jawahir</strong> — mahasiswa Informatika di Fakultas Teknik Unismuh Makassar yang percaya bahwa kode terbaik adalah kode yang <em>terasa</em>, bukan cuma berjalan.',
+    about_p2:
+      "Perjalanan saya dimulai dari proyek web sekolah, lalu berkembang menjadi kecintaan membangun perangkat lunak utuh: aplikasi Android dengan Kotlin & Firebase, sistem berbasis AI seperti computer vision dan deep learning, sampai web interaktif seperti yang sedang kamu lihat sekarang.",
+    about_p3:
+      'Filosofi saya sederhana: <span class="mono-accent">estetika + fungsi = pengalaman</span>. Setiap piksel dan setiap baris kode harus punya alasan untuk ada.',
+    stat_repo: "Repositori GitHub",
+    stat_tech: "Teknologi Dikuasai",
+    stat_years: "Tahun Ngoprek",
+    stat_curious: "Rasa Penasaran",
+    k_skills: "02 // KEAHLIAN",
+    h_skills: 'Senjata di <span class="grad-text">arsenal</span> saya',
+    lvl_a: "Mahir",
+    lvl_b: "Menengah",
+    lvl_c: "Familiar",
+    sk_py: "Otomasi, AI & scripting",
+    sk_kt: "Aplikasi mobile & Firebase",
+    sk_html: "Layout responsif & animasi",
+    sk_js: "Web interaktif & WebGL",
+    sk_fb: "Auth & database realtime",
+    sk_java: "Algoritma & OOP",
+    sk_git: "Version control & kolaborasi",
+    sk_ux: "Desain antarmuka & prototipe",
+    sk_php: "Web full-stack",
+    sk_ml: "Deep learning & computer vision",
+    k_projects: "03 // PROYEK PILIHAN",
+    h_projects: 'Karya yang saya <span class="grad-text">banggakan</span>',
+    p_rinra:
+      "Website profil hotel premium dengan konsep urban resort, integrasi mall, dan panduan wisata lokal Makassar.",
+    p_plat:
+      "Sistem deteksi & pembacaan plat nomor kendaraan otomatis berbasis computer vision — kamera melihat, AI membaca.",
+    p_diabetes:
+      "Model deep learning untuk memprediksi risiko diabetes dari data medis — kecerdasan buatan untuk kesehatan.",
+    p_resto:
+      "Aplikasi E-Menu modern dengan input nomor meja, filter kategori makanan/minuman, dan keranjang pesanan interaktif.",
+    p_wedding:
+      "Undangan pernikahan digital dengan fitur RSVP, peta lokasi interaktif, dan animasi visual yang estetik.",
+    p_kripto:
+      "Sistem autentikasi dengan enkripsi kriptografi — melindungi kredensial pengguna dari mata-mata digital.",
+    p_madrasah:
+      "Platform web yang menghubungkan ekosistem madrasah — informasi, komunikasi, dan layanan dalam satu pintu digital.",
+    p_myday:
+      "Aplikasi Android jurnal & produktivitas harian dengan sinkronisasi cloud real-time dan desain Material 3 yang bersih.",
+    p_porto:
+      "Situs yang sedang kamu jelajahi — partikel WebGL, geometri wireframe, glassmorphism, dan interaksi magnetik.",
+    cta_repos: "Jelajahi 22 Repositori di GitHub",
+    k_journey: "04 // PERJALANAN",
+    h_journey: 'Lini masa <span class="grad-text">evolusi</span>',
+    t1_h: "Web Pertama",
+    t1_p: "Merilis situs web pertama saat kelas 11 — awal perkenalan dengan HTML, CSS, dan dunia pengembangan web.",
+    t2_h: "Proyek UKK & Masuk Kuliah",
+    t2_p: "Menuntaskan rangkaian proyek UKK berbasis PHP full-stack, lalu resmi menjadi mahasiswa Informatika FT Unismuh Makassar.",
+    t3_h: "Eksplorasi Meluas",
+    t3_p: "Mendalami algoritma dengan Java, mencicipi Next.js & TypeScript, membangun proyek web PHP, hingga aplikasi Android MyDay.",
+    t4_h: "Era AI & Keamanan",
+    t4_p: "Terjun ke deep learning (DiabetesAI), computer vision (Scan Plat AI), kriptografi, dan platform MadrasahConnect.",
+    k_contact: "05 // KONTAK",
+    h_contact:
+      'Mari bangun sesuatu yang <span class="grad-text">luar biasa</span>',
+    contact_sub:
+      "Punya ide proyek, tawaran kolaborasi, atau sekadar ingin menyapa? Kotak masuk saya selalu terbuka.",
+    lbl_location: "LOKASI",
+    f_name: "NAMA",
+    f_msg: "PESAN",
+    ph_name: "Nama kamu",
+    ph_email: "email@kamu.com",
+    ph_msg: "Ceritakan ide kerennya…",
+    f_send: "Kirim Pesan",
+    foot_note: "Dirakit dengan kopi & kode — © 2026 Andi Rasyihan Jawahir",
+    foot_top: "KEMBALI KE ATAS ↑",
+    toast_mail: "Membuka aplikasi email kamu — pesan siap dikirim!",
+    roles: [
+      "Android Developer",
+      "Python Enthusiast",
+      "Web Developer",
+      "Desktop Customizer",
+      "UI/UX Explorer",
+    ],
+  },
+  en: {
+    preload: "LOADING SYSTEM…",
+    nav_home: "Home",
+    nav_about: "About",
+    nav_skills: "Skills",
+    nav_projects: "Projects",
+    nav_contact: "Contact",
+    nav_hire: "Hire Me",
+    hero_badge: "OPEN TO NEW PROJECTS",
+    hero_hello: "Hi, I'm",
+    hero_desc:
+      "A Computer Science student who builds Android apps, automates boring things with Python, and designs interfaces that make people stop scrolling.",
+    cta_work: "View Work",
+    cta_cv: "Download CV",
+    social_follow: "FOLLOW ME",
+    k_about: "01 // ABOUT ME",
+    h_about: 'The human behind the <span class="grad-text">screen</span>',
+    about_p1:
+      "I'm <strong>Andi Rasyihan Jawahir</strong> — a Computer Science student at the Faculty of Engineering, Unismuh Makassar, who believes the best code is code you can <em>feel</em>, not just run.",
+    about_p2:
+      "My journey began with school web projects and grew into a passion for building complete software: Android apps with Kotlin & Firebase, AI-powered systems like computer vision and deep learning, and interactive web experiences like the one you're exploring right now.",
+    about_p3:
+      'My philosophy is simple: <span class="mono-accent">aesthetics + function = experience</span>. Every pixel and every line of code must earn its place.',
+    stat_repo: "GitHub Repositories",
+    stat_tech: "Technologies Used",
+    stat_years: "Years Tinkering",
+    stat_curious: "Curiosity",
+    k_skills: "02 // SKILLS",
+    h_skills: 'Weapons in my <span class="grad-text">arsenal</span>',
+    lvl_a: "Advanced",
+    lvl_b: "Intermediate",
+    lvl_c: "Familiar",
+    sk_py: "Automation, AI & scripting",
+    sk_kt: "Mobile apps & Firebase",
+    sk_html: "Responsive layouts & animation",
+    sk_js: "Interactive web & WebGL",
+    sk_fb: "Auth & realtime database",
+    sk_java: "Algorithms & OOP",
+    sk_git: "Version control & collaboration",
+    sk_ux: "Interface design & prototyping",
+    sk_php: "Full-stack web",
+    sk_ml: "Deep learning & computer vision",
+    k_projects: "03 // FEATURED PROJECTS",
+    h_projects: 'Work I\'m <span class="grad-text">proud of</span>',
+    p_rinra:
+      "Premium hotel profile website featuring an urban resort concept, mall integration, and a local Makassar travel guide.",
+    p_plat:
+      "Automatic license plate detection & reading system powered by computer vision — the camera sees, the AI reads.",
+    p_diabetes:
+      "A deep learning model that predicts diabetes risk from medical data — artificial intelligence for healthcare.",
+    p_resto:
+      "A modern E-Menu app with table number input, food & drink category filters, and an interactive order cart.",
+    p_wedding:
+      "A digital wedding invitation with RSVP, an interactive location map, and elegant visual animations.",
+    p_kripto:
+      "An authentication system with cryptographic encryption — protecting user credentials from digital eavesdroppers.",
+    p_madrasah:
+      "A web platform connecting the madrasah ecosystem — information, communication, and services in one digital gateway.",
+    p_myday:
+      "An Android daily journal & productivity app with real-time cloud sync and a clean Material 3 design.",
+    p_porto:
+      "The site you're exploring right now — WebGL particles, wireframe geometry, glassmorphism, and magnetic interactions.",
+    cta_repos: "Explore 22 Repositories on GitHub",
+    k_journey: "04 // JOURNEY",
+    h_journey: 'A timeline of <span class="grad-text">evolution</span>',
+    t1_h: "First Website",
+    t1_p: "Launched my first website in 11th grade — my introduction to HTML, CSS, and the world of web development.",
+    t2_h: "Capstone Projects & University",
+    t2_p: "Completed a series of full-stack PHP capstone (UKK) projects, then officially became a CS student at FT Unismuh Makassar.",
+    t3_h: "Expanding Horizons",
+    t3_p: "Dived into algorithms with Java, tasted Next.js & TypeScript, built PHP web projects, and shipped the MyDay Android app.",
+    t4_h: "The AI & Security Era",
+    t4_p: "Ventured into deep learning (DiabetesAI), computer vision (Scan Plat AI), cryptography, and the MadrasahConnect platform.",
+    k_contact: "05 // CONTACT",
+    h_contact: 'Let\'s build something <span class="grad-text">extraordinary</span>',
+    contact_sub:
+      "Got a project idea, a collaboration offer, or just want to say hi? My inbox is always open.",
+    lbl_location: "LOCATION",
+    f_name: "NAME",
+    f_msg: "MESSAGE",
+    ph_name: "Your name",
+    ph_email: "you@email.com",
+    ph_msg: "Tell me about your cool idea…",
+    f_send: "Send Message",
+    foot_note: "Built with coffee & code — © 2026 Andi Rasyihan Jawahir",
+    foot_top: "BACK TO TOP ↑",
+    toast_mail: "Opening your email app — message ready to send!",
+    roles: [
+      "Android Developer",
+      "Python Enthusiast",
+      "Web Developer",
+      "Desktop Customizer",
+      "UI/UX Explorer",
+    ],
+  },
+};
+
+let currentLang = localStorage.getItem("lang") || "id";
+
+function applyLang(lang) {
+  currentLang = lang;
+  localStorage.setItem("lang", lang);
+  document.documentElement.lang = lang;
+  const dict = I18N[lang];
+
+  document.querySelectorAll("[data-i18n]").forEach((el) => {
+    const key = el.dataset.i18n;
+    if (dict[key] !== undefined) el.textContent = dict[key];
+  });
+  document.querySelectorAll("[data-i18n-html]").forEach((el) => {
+    const key = el.dataset.i18nHtml;
+    if (dict[key] !== undefined) el.innerHTML = dict[key];
+  });
+  document.querySelectorAll("[data-i18n-ph]").forEach((el) => {
+    const key = el.dataset.i18nPh;
+    if (dict[key] !== undefined) el.placeholder = dict[key];
+  });
+
+  const toggle = document.getElementById("langToggle");
+  if (toggle) toggle.textContent = lang === "id" ? "EN" : "ID";
+}
+
+document.getElementById("langToggle").addEventListener("click", () => {
+  applyLang(currentLang === "id" ? "en" : "id");
+});
+applyLang(currentLang);
+
 /* ══════════ EFEK KETIK ══════════ */
 
 (function typing() {
   const el = document.getElementById("typingText");
-  const roles = [
-    "Android Developer",
-    "Python Enthusiast",
-    "Web Developer",
-    "Desktop Customizer",
-    "UI/UX Explorer",
-  ];
   let roleIdx = 0,
     charIdx = 0,
     deleting = false;
 
   function tick() {
-    const word = roles[roleIdx];
+    const roles = I18N[currentLang].roles;
+    const word = roles[roleIdx % roles.length];
     el.textContent = word.slice(0, charIdx);
 
     let delay;
@@ -248,7 +468,7 @@ const reducedMotion = window.matchMedia(
       delay = 38;
       if (charIdx === 0) {
         deleting = false;
-        roleIdx = (roleIdx + 1) % roles.length;
+        roleIdx = (roleIdx + 1) % I18N[currentLang].roles.length;
         delay = 420;
       }
     }
@@ -415,7 +635,7 @@ const reducedMotion = window.matchMedia(
     );
     window.location.href = `mailto:andirasyihan43289@gmail.com?subject=${subject}&body=${body}`;
 
-    toast.textContent = "Membuka aplikasi email kamu — pesan siap dikirim!";
+    toast.textContent = I18N[currentLang].toast_mail;
     toast.classList.add("show");
     setTimeout(() => toast.classList.remove("show"), 3200);
     form.reset();

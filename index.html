@@ -76,7 +76,7 @@
       href="https://fonts.googleapis.com/css2?family=Syne:wght@500;700;800&family=Space+Grotesk:wght@300;400;500;600&family=JetBrains+Mono:wght@400;600&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="style.css?v=2" />
+    <link rel="stylesheet" href="style.css?v=3" />
   </head>
   <body>
     <!-- ══════════ PRELOADER ══════════ -->
@@ -87,7 +87,7 @@
         <div class="preloader-bar">
           <div class="preloader-fill" id="preloaderFill"></div>
         </div>
-        <div class="preloader-label">MEMUAT SISTEM…</div>
+        <div class="preloader-label" data-i18n="preload">MEMUAT SISTEM…</div>
       </div>
     </div>
 
@@ -107,12 +107,13 @@
     <header class="navbar" id="navbar">
       <a href="#home" class="nav-logo magnetic">RASYIHAN<span>.dev</span></a>
       <nav class="nav-links" id="navLinks">
-        <a href="#home" class="nav-link active">Beranda</a>
-        <a href="#tentang" class="nav-link">Tentang</a>
-        <a href="#keahlian" class="nav-link">Keahlian</a>
-        <a href="#proyek" class="nav-link">Proyek</a>
-        <a href="#kontak" class="nav-link">Kontak</a>
-        <a href="#kontak" class="btn btn-nav">Rekrut Saya</a>
+        <a href="#home" class="nav-link active" data-i18n="nav_home">Beranda</a>
+        <a href="#tentang" class="nav-link" data-i18n="nav_about">Tentang</a>
+        <a href="#keahlian" class="nav-link" data-i18n="nav_skills">Keahlian</a>
+        <a href="#proyek" class="nav-link" data-i18n="nav_projects">Proyek</a>
+        <a href="#kontak" class="nav-link" data-i18n="nav_contact">Kontak</a>
+        <a href="#kontak" class="btn btn-nav" data-i18n="nav_hire">Rekrut Saya</a>
+        <button class="lang-toggle" id="langToggle" aria-label="Ganti bahasa / Switch language">EN</button>
       </nav>
       <button class="hamburger" id="hamburger" aria-label="Menu">
         <span></span><span></span><span></span>
@@ -125,10 +126,11 @@
         <div class="container hero-grid">
           <div class="hero-text">
             <div class="hero-badge">
-              <span class="pulse-dot"></span> TERSEDIA UNTUK PROYEK BARU
+              <span class="pulse-dot"></span>
+              <span data-i18n="hero_badge">TERSEDIA UNTUK PROYEK BARU</span>
             </div>
             <h1>
-              <span class="hero-hello">Halo, saya</span>
+              <span class="hero-hello" data-i18n="hero_hello">Halo, saya</span>
               <span class="hero-name glitch" data-text="RASYIHAN"
                 >RASYIHAN</span
               >
@@ -137,14 +139,15 @@
               <span class="typing-prefix">&gt;_</span>
               <span id="typingText"></span><span class="caret"></span>
             </div>
-            <p class="hero-desc">
+            <p class="hero-desc" data-i18n="hero_desc">
               Mahasiswa Informatika yang membangun aplikasi Android, mengotomasi
               hal-hal membosankan dengan Python, dan mendesain antarmuka yang
               bikin orang berhenti scroll.
             </p>
             <div class="hero-cta">
               <a href="#proyek" class="btn btn-primary magnetic"
-                >Lihat Karya <span class="btn-arrow">→</span></a
+                ><span data-i18n="cta_work">Lihat Karya</span>
+                <span class="btn-arrow">→</span></a
               >
               <a
                 href="CV_Andi_Rasyihan_Jawahir.pdf"
@@ -163,7 +166,7 @@
                   <path d="m7 10 5 5 5-5" />
                   <path d="M12 15V3" />
                 </svg>
-                Unduh CV
+                <span data-i18n="cta_cv">Unduh CV</span>
               </a>
             </div>
             <div class="hero-social">
@@ -258,7 +261,7 @@
                 </svg>
               </a>
               <span class="social-line"></span>
-              <span class="social-label">IKUTI SAYA</span>
+              <span class="social-label" data-i18n="social_follow">IKUTI SAYA</span>
             </div>
           </div>
 
@@ -302,8 +305,10 @@
       <section id="tentang" class="section">
         <div class="container">
           <div class="section-head reveal">
-            <span class="kicker">01 // TENTANG SAYA</span>
-            <h2>Manusia di balik <span class="grad-text">layar</span></h2>
+            <span class="kicker" data-i18n="k_about">01 // TENTANG SAYA</span>
+            <h2 data-i18n-html="h_about">
+              Manusia di balik <span class="grad-text">layar</span>
+            </h2>
           </div>
           <div class="about-grid">
             <div class="glass-card about-card reveal">
@@ -344,20 +349,20 @@
                   CV
                 </a>
               </div>
-              <p class="about-lead">
+              <p class="about-lead" data-i18n-html="about_p1">
                 Saya <strong>Andi Rasyihan Jawahir</strong> — mahasiswa
                 Informatika di Fakultas Teknik Unismuh Makassar yang percaya
                 bahwa kode terbaik adalah kode yang <em>terasa</em>, bukan cuma
                 berjalan.
               </p>
-              <p>
+              <p data-i18n="about_p2">
                 Perjalanan saya dimulai dari proyek web sekolah, lalu berkembang
                 menjadi kecintaan membangun perangkat lunak utuh: aplikasi
                 Android dengan Kotlin &amp; Firebase, sistem berbasis AI seperti
                 computer vision dan deep learning, sampai web interaktif seperti
                 yang sedang kamu lihat sekarang.
               </p>
-              <p>
+              <p data-i18n-html="about_p3">
                 Filosofi saya sederhana:
                 <span class="mono-accent">estetika + fungsi = pengalaman</span>.
                 Setiap piksel dan setiap baris kode harus punya alasan untuk
@@ -368,21 +373,21 @@
               <div class="glass-card stat-card reveal">
                 <div class="stat-num" data-target="20">0</div>
                 <div class="stat-plus">+</div>
-                <div class="stat-label">Repositori GitHub</div>
+                <div class="stat-label" data-i18n="stat_repo">Repositori GitHub</div>
               </div>
               <div class="glass-card stat-card reveal">
                 <div class="stat-num" data-target="10">0</div>
                 <div class="stat-plus">+</div>
-                <div class="stat-label">Teknologi Dikuasai</div>
+                <div class="stat-label" data-i18n="stat_tech">Teknologi Dikuasai</div>
               </div>
               <div class="glass-card stat-card reveal">
                 <div class="stat-num" data-target="3">0</div>
                 <div class="stat-plus">+</div>
-                <div class="stat-label">Tahun Ngoprek</div>
+                <div class="stat-label" data-i18n="stat_years">Tahun Ngoprek</div>
               </div>
               <div class="glass-card stat-card reveal">
                 <div class="stat-num stat-infinity">∞</div>
-                <div class="stat-label">Rasa Penasaran</div>
+                <div class="stat-label" data-i18n="stat_curious">Rasa Penasaran</div>
               </div>
             </div>
           </div>
@@ -393,108 +398,110 @@
       <section id="keahlian" class="section">
         <div class="container">
           <div class="section-head reveal">
-            <span class="kicker">02 // KEAHLIAN</span>
-            <h2>Senjata di <span class="grad-text">arsenal</span> saya</h2>
+            <span class="kicker" data-i18n="k_skills">02 // KEAHLIAN</span>
+            <h2 data-i18n-html="h_skills">
+              Senjata di <span class="grad-text">arsenal</span> saya
+            </h2>
           </div>
           <div class="skills-grid">
-            <div class="glass-card skill-card reveal" style="--lvl: 90%">
+            <div class="glass-card skill-card reveal">
               <div class="skill-icon">Py</div>
               <div class="skill-info">
                 <div class="skill-top">
                   <h3>Python</h3>
-                  <span class="skill-pct">90%</span>
+                  <span class="skill-lvl lvl-a" data-i18n="lvl_a">Mahir</span>
                 </div>
-                <div class="skill-bar"><div class="skill-fill"></div></div>
+                <p class="skill-desc" data-i18n="sk_py">Otomasi, AI &amp; scripting</p>
               </div>
             </div>
-            <div class="glass-card skill-card reveal" style="--lvl: 85%">
+            <div class="glass-card skill-card reveal">
               <div class="skill-icon">Kt</div>
               <div class="skill-info">
                 <div class="skill-top">
                   <h3>Kotlin &amp; Android</h3>
-                  <span class="skill-pct">85%</span>
+                  <span class="skill-lvl lvl-a" data-i18n="lvl_a">Mahir</span>
                 </div>
-                <div class="skill-bar"><div class="skill-fill"></div></div>
+                <p class="skill-desc" data-i18n="sk_kt">Aplikasi mobile &amp; Firebase</p>
               </div>
             </div>
-            <div class="glass-card skill-card reveal" style="--lvl: 88%">
+            <div class="glass-card skill-card reveal">
               <div class="skill-icon">&lt;&gt;</div>
               <div class="skill-info">
                 <div class="skill-top">
                   <h3>HTML &amp; CSS</h3>
-                  <span class="skill-pct">88%</span>
+                  <span class="skill-lvl lvl-a" data-i18n="lvl_a">Mahir</span>
                 </div>
-                <div class="skill-bar"><div class="skill-fill"></div></div>
+                <p class="skill-desc" data-i18n="sk_html">Layout responsif &amp; animasi</p>
               </div>
             </div>
-            <div class="glass-card skill-card reveal" style="--lvl: 80%">
+            <div class="glass-card skill-card reveal">
               <div class="skill-icon">Js</div>
               <div class="skill-info">
                 <div class="skill-top">
                   <h3>JavaScript</h3>
-                  <span class="skill-pct">80%</span>
+                  <span class="skill-lvl lvl-b" data-i18n="lvl_b">Menengah</span>
                 </div>
-                <div class="skill-bar"><div class="skill-fill"></div></div>
+                <p class="skill-desc" data-i18n="sk_js">Web interaktif &amp; WebGL</p>
               </div>
             </div>
-            <div class="glass-card skill-card reveal" style="--lvl: 75%">
+            <div class="glass-card skill-card reveal">
               <div class="skill-icon">Fb</div>
               <div class="skill-info">
                 <div class="skill-top">
                   <h3>Firebase</h3>
-                  <span class="skill-pct">75%</span>
+                  <span class="skill-lvl lvl-b" data-i18n="lvl_b">Menengah</span>
                 </div>
-                <div class="skill-bar"><div class="skill-fill"></div></div>
+                <p class="skill-desc" data-i18n="sk_fb">Auth &amp; database realtime</p>
               </div>
             </div>
-            <div class="glass-card skill-card reveal" style="--lvl: 70%">
+            <div class="glass-card skill-card reveal">
               <div class="skill-icon">Jv</div>
               <div class="skill-info">
                 <div class="skill-top">
                   <h3>Java</h3>
-                  <span class="skill-pct">70%</span>
+                  <span class="skill-lvl lvl-b" data-i18n="lvl_b">Menengah</span>
                 </div>
-                <div class="skill-bar"><div class="skill-fill"></div></div>
+                <p class="skill-desc" data-i18n="sk_java">Algoritma &amp; OOP</p>
               </div>
             </div>
-            <div class="glass-card skill-card reveal" style="--lvl: 85%">
+            <div class="glass-card skill-card reveal">
               <div class="skill-icon">Gt</div>
               <div class="skill-info">
                 <div class="skill-top">
                   <h3>Git &amp; GitHub</h3>
-                  <span class="skill-pct">85%</span>
+                  <span class="skill-lvl lvl-a" data-i18n="lvl_a">Mahir</span>
                 </div>
-                <div class="skill-bar"><div class="skill-fill"></div></div>
+                <p class="skill-desc" data-i18n="sk_git">Version control &amp; kolaborasi</p>
               </div>
             </div>
-            <div class="glass-card skill-card reveal" style="--lvl: 78%">
+            <div class="glass-card skill-card reveal">
               <div class="skill-icon">Ux</div>
               <div class="skill-info">
                 <div class="skill-top">
                   <h3>UI/UX Design</h3>
-                  <span class="skill-pct">78%</span>
+                  <span class="skill-lvl lvl-b" data-i18n="lvl_b">Menengah</span>
                 </div>
-                <div class="skill-bar"><div class="skill-fill"></div></div>
+                <p class="skill-desc" data-i18n="sk_ux">Desain antarmuka &amp; prototipe</p>
               </div>
             </div>
-            <div class="glass-card skill-card reveal" style="--lvl: 74%">
+            <div class="glass-card skill-card reveal">
               <div class="skill-icon">Php</div>
               <div class="skill-info">
                 <div class="skill-top">
                   <h3>PHP</h3>
-                  <span class="skill-pct">74%</span>
+                  <span class="skill-lvl lvl-b" data-i18n="lvl_b">Menengah</span>
                 </div>
-                <div class="skill-bar"><div class="skill-fill"></div></div>
+                <p class="skill-desc" data-i18n="sk_php">Web full-stack</p>
               </div>
             </div>
-            <div class="glass-card skill-card reveal" style="--lvl: 72%">
+            <div class="glass-card skill-card reveal">
               <div class="skill-icon">AI</div>
               <div class="skill-info">
                 <div class="skill-top">
                   <h3>Machine Learning</h3>
-                  <span class="skill-pct">72%</span>
+                  <span class="skill-lvl lvl-c" data-i18n="lvl_c">Familiar</span>
                 </div>
-                <div class="skill-bar"><div class="skill-fill"></div></div>
+                <p class="skill-desc" data-i18n="sk_ml">Deep learning &amp; computer vision</p>
               </div>
             </div>
           </div>
@@ -505,8 +512,10 @@
       <section id="proyek" class="section">
         <div class="container">
           <div class="section-head reveal">
-            <span class="kicker">03 // PROYEK PILIHAN</span>
-            <h2>Karya yang saya <span class="grad-text">banggakan</span></h2>
+            <span class="kicker" data-i18n="k_projects">03 // PROYEK PILIHAN</span>
+            <h2 data-i18n-html="h_projects">
+              Karya yang saya <span class="grad-text">banggakan</span>
+            </h2>
           </div>
           <div class="projects-grid">
             <a
@@ -521,7 +530,7 @@
                 <span class="project-arrow">↗</span>
               </div>
               <h3>The Rinra Makassar</h3>
-              <p>
+              <p data-i18n="p_rinra">
                 Website profil hotel premium dengan konsep urban resort,
                 integrasi mall, dan panduan wisata lokal Makassar.
               </p>
@@ -541,7 +550,7 @@
                 <span class="project-arrow">↗</span>
               </div>
               <h3>Scan Plat AI</h3>
-              <p>
+              <p data-i18n="p_plat">
                 Sistem deteksi &amp; pembacaan plat nomor kendaraan otomatis
                 berbasis computer vision — kamera melihat, AI membaca.
               </p>
@@ -561,7 +570,7 @@
                 <span class="project-arrow">↗</span>
               </div>
               <h3>DiabetesAI</h3>
-              <p>
+              <p data-i18n="p_diabetes">
                 Model deep learning untuk memprediksi risiko diabetes dari data
                 medis — kecerdasan buatan untuk kesehatan.
               </p>
@@ -581,7 +590,7 @@
                 <span class="project-arrow">↗</span>
               </div>
               <h3>Dia Resto &amp; Cafe</h3>
-              <p>
+              <p data-i18n="p_resto">
                 Aplikasi E-Menu modern dengan input nomor meja, filter kategori
                 makanan/minuman, dan keranjang pesanan interaktif.
               </p>
@@ -601,7 +610,7 @@
                 <span class="project-arrow">↗</span>
               </div>
               <h3>Digital Invitation</h3>
-              <p>
+              <p data-i18n="p_wedding">
                 Undangan pernikahan digital dengan fitur RSVP, peta lokasi
                 interaktif, dan animasi visual yang estetik.
               </p>
@@ -621,7 +630,7 @@
                 <span class="project-arrow">↗</span>
               </div>
               <h3>Kriptografi Login System</h3>
-              <p>
+              <p data-i18n="p_kripto">
                 Sistem autentikasi dengan enkripsi kriptografi — melindungi
                 kredensial pengguna dari mata-mata digital.
               </p>
@@ -641,7 +650,7 @@
                 <span class="project-arrow">↗</span>
               </div>
               <h3>MadrasahConnect</h3>
-              <p>
+              <p data-i18n="p_madrasah">
                 Platform web yang menghubungkan ekosistem madrasah — informasi,
                 komunikasi, dan layanan dalam satu pintu digital.
               </p>
@@ -661,7 +670,7 @@
                 <span class="project-arrow">↗</span>
               </div>
               <h3>MyDay</h3>
-              <p>
+              <p data-i18n="p_myday">
                 Aplikasi Android jurnal &amp; produktivitas harian dengan
                 sinkronisasi cloud real-time dan desain Material 3 yang bersih.
               </p>
@@ -681,7 +690,7 @@
                 <span class="project-arrow">↗</span>
               </div>
               <h3>Portofolio 3D</h3>
-              <p>
+              <p data-i18n="p_porto">
                 Situs yang sedang kamu jelajahi — partikel WebGL, geometri
                 wireframe, glassmorphism, dan interaksi magnetik.
               </p>
@@ -696,7 +705,7 @@
               target="_blank"
               rel="noopener"
               class="btn btn-ghost magnetic"
-              >Jelajahi 22 Repositori di GitHub
+              ><span data-i18n="cta_repos">Jelajahi 22 Repositori di GitHub</span>
               <span class="btn-arrow">→</span></a
             >
           </div>
@@ -707,16 +716,18 @@
       <section id="perjalanan" class="section">
         <div class="container">
           <div class="section-head reveal">
-            <span class="kicker">04 // PERJALANAN</span>
-            <h2>Lini masa <span class="grad-text">evolusi</span></h2>
+            <span class="kicker" data-i18n="k_journey">04 // PERJALANAN</span>
+            <h2 data-i18n-html="h_journey">
+              Lini masa <span class="grad-text">evolusi</span>
+            </h2>
           </div>
           <div class="timeline">
             <div class="timeline-item reveal">
               <div class="timeline-dot"></div>
               <div class="glass-card timeline-card">
                 <span class="timeline-year">2023</span>
-                <h3>Web Pertama</h3>
-                <p>
+                <h3 data-i18n="t1_h">Web Pertama</h3>
+                <p data-i18n="t1_p">
                   Merilis situs web pertama saat kelas 11 — awal perkenalan
                   dengan HTML, CSS, dan dunia pengembangan web.
                 </p>
@@ -726,8 +737,8 @@
               <div class="timeline-dot"></div>
               <div class="glass-card timeline-card">
                 <span class="timeline-year">2024</span>
-                <h3>Proyek UKK &amp; Masuk Kuliah</h3>
-                <p>
+                <h3 data-i18n="t2_h">Proyek UKK &amp; Masuk Kuliah</h3>
+                <p data-i18n="t2_p">
                   Menuntaskan rangkaian proyek UKK berbasis PHP full-stack, lalu
                   resmi menjadi mahasiswa Informatika FT Unismuh Makassar.
                 </p>
@@ -737,8 +748,8 @@
               <div class="timeline-dot"></div>
               <div class="glass-card timeline-card">
                 <span class="timeline-year">2025</span>
-                <h3>Eksplorasi Meluas</h3>
-                <p>
+                <h3 data-i18n="t3_h">Eksplorasi Meluas</h3>
+                <p data-i18n="t3_p">
                   Mendalami algoritma dengan Java, mencicipi Next.js &amp;
                   TypeScript, membangun proyek web PHP, hingga aplikasi Android
                   MyDay.
@@ -749,8 +760,8 @@
               <div class="timeline-dot"></div>
               <div class="glass-card timeline-card">
                 <span class="timeline-year">2026</span>
-                <h3>Era AI &amp; Keamanan</h3>
-                <p>
+                <h3 data-i18n="t4_h">Era AI &amp; Keamanan</h3>
+                <p data-i18n="t4_p">
                   Terjun ke deep learning (DiabetesAI), computer vision (Scan
                   Plat AI), kriptografi, dan platform MadrasahConnect.
                 </p>
@@ -764,11 +775,11 @@
       <section id="kontak" class="section">
         <div class="container">
           <div class="section-head center reveal">
-            <span class="kicker">05 // KONTAK</span>
-            <h2>
+            <span class="kicker" data-i18n="k_contact">05 // KONTAK</span>
+            <h2 data-i18n-html="h_contact">
               Mari bangun sesuatu yang <span class="grad-text">luar biasa</span>
             </h2>
-            <p class="section-sub">
+            <p class="section-sub" data-i18n="contact_sub">
               Punya ide proyek, tawaran kolaborasi, atau sekadar ingin menyapa?
               Kotak masuk saya selalu terbuka.
             </p>
@@ -902,7 +913,7 @@
                   </svg>
                 </div>
                 <div>
-                  <span class="contact-label">LOKASI</span
+                  <span class="contact-label" data-i18n="lbl_location">LOKASI</span
                   ><span class="contact-value">Makassar, Indonesia</span>
                 </div>
               </div>
@@ -910,12 +921,13 @@
             <form class="glass-card contact-form reveal" id="contactForm">
               <div class="form-row">
                 <div class="form-group">
-                  <label for="nama">NAMA</label>
+                  <label for="nama" data-i18n="f_name">NAMA</label>
                   <input
                     type="text"
                     id="nama"
                     name="nama"
                     placeholder="Nama kamu"
+                    data-i18n-ph="ph_name"
                     required
                   />
                 </div>
@@ -926,22 +938,25 @@
                     id="email"
                     name="email"
                     placeholder="email@kamu.com"
+                    data-i18n-ph="ph_email"
                     required
                   />
                 </div>
               </div>
               <div class="form-group">
-                <label for="pesan">PESAN</label>
+                <label for="pesan" data-i18n="f_msg">PESAN</label>
                 <textarea
                   id="pesan"
                   name="pesan"
                   rows="5"
                   placeholder="Ceritakan ide kerennya…"
+                  data-i18n-ph="ph_msg"
                   required
                 ></textarea>
               </div>
               <button type="submit" class="btn btn-primary btn-full magnetic">
-                Kirim Pesan <span class="btn-arrow">→</span>
+                <span data-i18n="f_send">Kirim Pesan</span>
+                <span class="btn-arrow">→</span>
               </button>
             </form>
           </div>
@@ -953,16 +968,21 @@
     <footer class="footer">
       <div class="container footer-inner">
         <span class="footer-logo">RASYIHAN<span>.dev</span></span>
-        <span class="footer-note"
+        <span class="footer-note" data-i18n="foot_note"
           >Dirakit dengan kopi &amp; kode — © 2026 Andi Rasyihan Jawahir</span
         >
-        <a href="#home" class="footer-top magnetic">KEMBALI KE ATAS ↑</a>
+        <a href="#home" class="footer-top magnetic" data-i18n="foot_top">KEMBALI KE ATAS ↑</a>
       </div>
     </footer>
 
     <div id="toast"></div>
 
+    <!-- Analytics pengunjung (GoatCounter — gratis, tanpa cookie):
+         1. Daftar di https://www.goatcounter.com lalu pilih kode situs (mis. "rasyihan")
+         2. Hapus tanda komentar di bawah dan ganti KODE:
+    <script data-goatcounter="https://KODE.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+    -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-    <script src="script.js?v=2"></script>
+    <script src="script.js?v=3"></script>
   </body>
 </html>
