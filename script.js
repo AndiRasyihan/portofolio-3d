@@ -6,7 +6,9 @@
 "use strict";
 
 const isTouch = window.matchMedia("(hover: none), (pointer: coarse)").matches;
-const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+const reducedMotion = window.matchMedia(
+  "(prefers-reduced-motion: reduce)",
+).matches;
 
 /* ══════════ PRELOADER ══════════ */
 
@@ -36,16 +38,23 @@ const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matc
   scene.fog = new THREE.FogExp2(0x04060f, 0.0016);
 
   const camera = new THREE.PerspectiveCamera(
-    55, window.innerWidth / window.innerHeight, 0.1, 1000
+    55,
+    window.innerWidth / window.innerHeight,
+    0.1,
+    1000,
   );
   camera.position.z = 70;
 
-  const renderer = new THREE.WebGLRenderer({ canvas, antialias: true, alpha: true });
+  const renderer = new THREE.WebGLRenderer({
+    canvas,
+    antialias: true,
+    alpha: true,
+  });
   renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
   renderer.setSize(window.innerWidth, window.innerHeight);
 
   /* ── Partikel bintang ── */
-  const PARTICLE_COUNT = (window.innerWidth < 768 ? 800 : 1800);
+  const PARTICLE_COUNT = window.innerWidth < 768 ? 800 : 1800;
   const positions = new Float32Array(PARTICLE_COUNT * 3);
   const colors = new Float32Array(PARTICLE_COUNT * 3);
   const palette = [
@@ -56,25 +65,30 @@ const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matc
   ];
 
   for (let i = 0; i < PARTICLE_COUNT; i++) {
-    positions[i * 3]     = (Math.random() - 0.5) * 420;
+    positions[i * 3] = (Math.random() - 0.5) * 420;
     positions[i * 3 + 1] = (Math.random() - 0.5) * 420;
     positions[i * 3 + 2] = (Math.random() - 0.5) * 420;
     const c = palette[Math.floor(Math.random() * palette.length)];
-    colors[i * 3] = c.r; colors[i * 3 + 1] = c.g; colors[i * 3 + 2] = c.b;
+    colors[i * 3] = c.r;
+    colors[i * 3 + 1] = c.g;
+    colors[i * 3 + 2] = c.b;
   }
 
   const particleGeo = new THREE.BufferGeometry();
   particleGeo.setAttribute("position", new THREE.BufferAttribute(positions, 3));
   particleGeo.setAttribute("color", new THREE.BufferAttribute(colors, 3));
 
-  const particles = new THREE.Points(particleGeo, new THREE.PointsMaterial({
-    size: 1.1,
-    vertexColors: true,
-    transparent: true,
-    opacity: 0.85,
-    blending: THREE.AdditiveBlending,
-    depthWrite: false,
-  }));
+  const particles = new THREE.Points(
+    particleGeo,
+    new THREE.PointsMaterial({
+      size: 1.1,
+      vertexColors: true,
+      transparent: true,
+      opacity: 0.85,
+      blending: THREE.AdditiveBlending,
+      depthWrite: false,
+    }),
+  );
   scene.add(particles);
 
   /* ── Geometri wireframe melayang ── */
@@ -82,21 +96,36 @@ const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matc
 
   const icosa = new THREE.Mesh(
     new THREE.IcosahedronGeometry(15, 1),
-    new THREE.MeshBasicMaterial({ color: 0x00f0ff, wireframe: true, transparent: true, opacity: 0.14 })
+    new THREE.MeshBasicMaterial({
+      color: 0x00f0ff,
+      wireframe: true,
+      transparent: true,
+      opacity: 0.14,
+    }),
   );
   icosa.position.set(34, 8, -26);
   shapes.add(icosa);
 
   const knot = new THREE.Mesh(
     new THREE.TorusKnotGeometry(8, 2.2, 96, 14),
-    new THREE.MeshBasicMaterial({ color: 0x7b2ff7, wireframe: true, transparent: true, opacity: 0.13 })
+    new THREE.MeshBasicMaterial({
+      color: 0x7b2ff7,
+      wireframe: true,
+      transparent: true,
+      opacity: 0.13,
+    }),
   );
   knot.position.set(-36, -14, -32);
   shapes.add(knot);
 
   const octa = new THREE.Mesh(
     new THREE.OctahedronGeometry(6, 0),
-    new THREE.MeshBasicMaterial({ color: 0xff2ec4, wireframe: true, transparent: true, opacity: 0.16 })
+    new THREE.MeshBasicMaterial({
+      color: 0xff2ec4,
+      wireframe: true,
+      transparent: true,
+      opacity: 0.16,
+    }),
   );
   octa.position.set(-16, 22, -44);
   shapes.add(octa);
@@ -104,7 +133,8 @@ const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matc
   scene.add(shapes);
 
   /* ── Interaksi mouse & scroll ── */
-  let mouseX = 0, mouseY = 0;
+  let mouseX = 0,
+    mouseY = 0;
   window.addEventListener("mousemove", (e) => {
     mouseX = (e.clientX / window.innerWidth) * 2 - 1;
     mouseY = (e.clientY / window.innerHeight) * 2 - 1;
@@ -157,10 +187,14 @@ const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matc
 
   const ring = document.getElementById("cursor");
   const dot = document.getElementById("cursorDot");
-  let tx = -100, ty = -100, rx = -100, ry = -100;
+  let tx = -100,
+    ty = -100,
+    rx = -100,
+    ry = -100;
 
   window.addEventListener("mousemove", (e) => {
-    tx = e.clientX; ty = e.clientY;
+    tx = e.clientX;
+    ty = e.clientY;
     dot.style.left = tx + "px";
     dot.style.top = ty + "px";
   });
@@ -193,7 +227,9 @@ const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matc
     "Desktop Customizer",
     "UI/UX Explorer",
   ];
-  let roleIdx = 0, charIdx = 0, deleting = false;
+  let roleIdx = 0,
+    charIdx = 0,
+    deleting = false;
 
   function tick() {
     const word = roles[roleIdx];
@@ -203,11 +239,18 @@ const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matc
     if (!deleting) {
       charIdx++;
       delay = 70 + Math.random() * 60;
-      if (charIdx > word.length) { deleting = true; delay = 1900; }
+      if (charIdx > word.length) {
+        deleting = true;
+        delay = 1900;
+      }
     } else {
       charIdx--;
       delay = 38;
-      if (charIdx === 0) { deleting = false; roleIdx = (roleIdx + 1) % roles.length; delay = 420; }
+      if (charIdx === 0) {
+        deleting = false;
+        roleIdx = (roleIdx + 1) % roles.length;
+        delay = 420;
+      }
     }
     setTimeout(tick, delay);
   }
@@ -245,7 +288,10 @@ const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matc
       if (y >= sec.offsetTop - window.innerHeight * 0.4) current = sec.id;
     }
     navLinks.forEach((link) =>
-      link.classList.toggle("active", link.getAttribute("href") === "#" + current)
+      link.classList.toggle(
+        "active",
+        link.getAttribute("href") === "#" + current,
+      ),
     );
   }
 
@@ -254,10 +300,16 @@ const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matc
 
   /* Menu mobile */
   const hamburger = document.getElementById("hamburger");
-  hamburger.addEventListener("click", () => document.body.classList.toggle("menu-open"));
-  document.querySelectorAll("#navLinks a").forEach((a) =>
-    a.addEventListener("click", () => document.body.classList.remove("menu-open"))
+  hamburger.addEventListener("click", () =>
+    document.body.classList.toggle("menu-open"),
   );
+  document
+    .querySelectorAll("#navLinks a")
+    .forEach((a) =>
+      a.addEventListener("click", () =>
+        document.body.classList.remove("menu-open"),
+      ),
+    );
 })();
 
 /* ══════════ REVEAL SAAT SCROLL ══════════ */
@@ -267,13 +319,14 @@ const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matc
     (entries) => {
       entries.forEach((entry, i) => {
         if (entry.isIntersecting) {
-          entry.target.style.transitionDelay = (entry.target.dataset.delay || (i % 4) * 90) + "ms";
+          entry.target.style.transitionDelay =
+            (entry.target.dataset.delay || (i % 4) * 90) + "ms";
           entry.target.classList.add("visible");
           observer.unobserve(entry.target);
         }
       });
     },
-    { threshold: 0.14, rootMargin: "0px 0px -40px 0px" }
+    { threshold: 0.14, rootMargin: "0px 0px -40px 0px" },
   );
   document.querySelectorAll(".reveal").forEach((el) => observer.observe(el));
 })();
@@ -282,23 +335,26 @@ const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matc
 
 (function counters() {
   const nums = document.querySelectorAll(".stat-num[data-target]");
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach((entry) => {
-      if (!entry.isIntersecting) return;
-      const el = entry.target;
-      const target = +el.dataset.target;
-      const start = performance.now();
-      const dur = 1600;
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+        const el = entry.target;
+        const target = +el.dataset.target;
+        const start = performance.now();
+        const dur = 1600;
 
-      (function step(now) {
-        const p = Math.min(1, (now - start) / dur);
-        el.textContent = Math.floor(target * (1 - Math.pow(1 - p, 3)));
-        if (p < 1) requestAnimationFrame(step);
-      })(start);
+        (function step(now) {
+          const p = Math.min(1, (now - start) / dur);
+          el.textContent = Math.floor(target * (1 - Math.pow(1 - p, 3)));
+          if (p < 1) requestAnimationFrame(step);
+        })(start);
 
-      observer.unobserve(el);
-    });
-  }, { threshold: 0.6 });
+        observer.unobserve(el);
+      });
+    },
+    { threshold: 0.6 },
+  );
   nums.forEach((el) => observer.observe(el));
 })();
 
@@ -313,8 +369,7 @@ const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matc
       const px = (e.clientX - rect.left) / rect.width;
       const py = (e.clientY - rect.top) / rect.height;
 
-      card.style.transform =
-        `perspective(800px) rotateY(${(px - 0.5) * 12}deg) rotateX(${(0.5 - py) * 12}deg) translateY(-4px)`;
+      card.style.transform = `perspective(800px) rotateY(${(px - 0.5) * 12}deg) rotateX(${(0.5 - py) * 12}deg) translateY(-4px)`;
       card.style.setProperty("--mx", px * 100 + "%");
       card.style.setProperty("--my", py * 100 + "%");
     });
@@ -355,9 +410,10 @@ const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matc
     const pesan = form.pesan.value.trim();
 
     const subject = encodeURIComponent(`[Portofolio] Pesan dari ${nama}`);
-    const body = encodeURIComponent(`Nama: ${nama}\nEmail: ${email}\n\n${pesan}`);
-    window.location.href =
-      `mailto:andirasyihan43289@gmail.com?subject=${subject}&body=${body}`;
+    const body = encodeURIComponent(
+      `Nama: ${nama}\nEmail: ${email}\n\n${pesan}`,
+    );
+    window.location.href = `mailto:andirasyihan43289@gmail.com?subject=${subject}&body=${body}`;
 
     toast.textContent = "Membuka aplikasi email kamu — pesan siap dikirim!";
     toast.classList.add("show");
