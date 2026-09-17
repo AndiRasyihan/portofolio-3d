@@ -231,7 +231,7 @@ const I18N = {
     hero_badge: "TERSEDIA UNTUK PROYEK BARU",
     hero_hello: "Halo, saya",
     hero_desc:
-      "Mahasiswa Informatika yang membangun aplikasi Android, mengotomasi hal-hal membosankan dengan Python, dan mendesain antarmuka yang bikin orang berhenti scroll.",
+      "Mahasiswa Informatika yang membangun aplikasi Android, full-stack web, mengotomasi hal-hal membosankan dengan Python, dan mendesain antarmuka yang bikin orang berhenti scroll.",
     cta_work: "Lihat Karya",
     cta_cv: "Unduh CV",
     social_follow: "IKUTI SAYA",
@@ -240,7 +240,7 @@ const I18N = {
     about_p1:
       "Saya <strong>Andi Rasyihan Jawahir</strong> — mahasiswa Informatika di Fakultas Teknik Unismuh Makassar yang percaya bahwa kode terbaik adalah kode yang <em>terasa</em>, bukan cuma berjalan.",
     about_p2:
-      "Perjalanan saya dimulai dari proyek web sekolah, lalu berkembang menjadi kecintaan membangun perangkat lunak utuh: aplikasi Android dengan Kotlin & Firebase, sistem berbasis AI seperti computer vision dan deep learning, sampai web interaktif seperti yang sedang kamu lihat sekarang.",
+      "Perjalanan saya dimulai dari proyek web sekolah, lalu berkembang menjadi kecintaan membangun perangkat lunak utuh: aplikasi Android dengan Kotlin & Firebase, full-stack app dengan Next.js & Express, sistem berbasis AI seperti computer vision dan deep learning, bot Telegram, arsitektur microservices, sampai web interaktif seperti yang sedang kamu lihat sekarang.",
     about_p3:
       'Filosofi saya sederhana: <span class="mono-accent">estetika + fungsi = pengalaman</span>. Setiap piksel dan setiap baris kode harus punya alasan untuk ada.',
     stat_repo: "Repositori GitHub",
@@ -262,6 +262,10 @@ const I18N = {
     sk_ux: "Desain antarmuka & prototipe",
     sk_php: "Web full-stack",
     sk_ml: "Deep learning & computer vision",
+    sk_next: "Full-stack React & SSR",
+    sk_express: "RESTful API & backend",
+    sk_docker: "Containerisasi & deployment",
+    sk_tf: "CNN & neural networks",
     k_projects: "03 // PROYEK PILIHAN",
     h_projects: 'Karya yang saya <span class="grad-text">banggakan</span>',
     p_rinra:
@@ -282,7 +286,25 @@ const I18N = {
       "Aplikasi Android jurnal & produktivitas harian dengan sinkronisasi cloud real-time dan desain Material 3 yang bersih.",
     p_porto:
       "Situs yang sedang kamu jelajahi — partikel WebGL, geometri wireframe, glassmorphism, dan interaksi magnetik.",
-    cta_repos: "Jelajahi 27 Repositori di GitHub",
+    p_gemini:
+      "Aplikasi Android MyDay yang diperkuat Gemini API — AI sebagai asisten produktivitas harian Anda.",
+    p_kamus:
+      "Kamus Bahasa Bugis full-stack modern: Next.js, MongoDB, MinIO, Docker, lengkap dengan fitur Chat AI.",
+    p_laundry:
+      "Aplikasi laundry online full-stack dengan Express.js, Prisma ORM, dan testing otomatis.",
+    p_sentimen:
+      "Analisis sentimen review Webtoon menggunakan SVM dan optimasi Algoritma Genetika.",
+    p_cnn:
+      "CNN image classifier untuk klasifikasi gambar bekal vs botol dengan TensorFlow/Keras.",
+    p_micro:
+      "Mini project arsitektur microservices — Inventory, Order, dan Payment service.",
+    p_bot:
+      "Bot Telegram pengingat jadwal kuliah dengan konfirmasi H-1 dari admin kelas.",
+    p_simkripto:
+      "Simulasi 5 konsep kriptografi — RSA, Digital Signature, SSL/TLS, dan Blockchain.",
+    p_wallpaper:
+      "Editor wallpaper berbasis web — desain & unduh wallpaper langsung dari browser.",
+    cta_repos: "Jelajahi 50+ Repositori di GitHub",
     k_cert: "04 // SERTIFIKAT",
     h_cert: 'Bukti <span class="grad-text">pencapaian</span> saya',
     c_ccna: "Sertifikat kelulusan course Cisco Networking Academy: Introduction to Networks.",
@@ -301,8 +323,8 @@ const I18N = {
     t2_p: "Menuntaskan rangkaian proyek UKK berbasis PHP full-stack, lalu resmi menjadi mahasiswa Informatika FT Unismuh Makassar.",
     t3_h: "Eksplorasi Meluas",
     t3_p: "Mendalami algoritma dengan Java, mencicipi Next.js & TypeScript, membangun proyek web PHP, hingga aplikasi Android MyDay.",
-    t4_h: "Era AI & Keamanan",
-    t4_p: "Terjun ke deep learning (DiabetesAI), computer vision (Scan Plat AI), kriptografi, dan platform MadrasahConnect.",
+    t4_h: "Era AI, Full-Stack & Keamanan",
+    t4_p: "Terjun ke deep learning (DiabetesAI, CNN Classifier), computer vision (Scan Plat AI), NLP (Sentimen Webtoon), full-stack (Kamus Bugis, CozyLab Laundry), Gemini AI, microservices, bot Telegram, kriptografi, dan platform MadrasahConnect.",
     k_contact: "06 // KONTAK",
     h_contact:
       'Mari bangun sesuatu yang <span class="grad-text">luar biasa</span>',
@@ -322,8 +344,11 @@ const I18N = {
       "Android Developer",
       "Python Enthusiast",
       "Web Developer",
+      "Full-Stack Developer",
+      "AI Engineer",
       "Desktop Customizer",
       "UI/UX Explorer",
+      "Bot Developer",
     ],
   },
   en: {
@@ -338,7 +363,7 @@ const I18N = {
     hero_badge: "OPEN TO NEW PROJECTS",
     hero_hello: "Hi, I'm",
     hero_desc:
-      "A Computer Science student who builds Android apps, automates boring things with Python, and designs interfaces that make people stop scrolling.",
+      "A Computer Science student who builds Android apps, full-stack web apps, automates boring things with Python, and designs interfaces that make people stop scrolling.",
     cta_work: "View Work",
     cta_cv: "Download CV",
     social_follow: "FOLLOW ME",
@@ -347,7 +372,7 @@ const I18N = {
     about_p1:
       "I'm <strong>Andi Rasyihan Jawahir</strong> — a Computer Science student at the Faculty of Engineering, Unismuh Makassar, who believes the best code is code you can <em>feel</em>, not just run.",
     about_p2:
-      "My journey began with school web projects and grew into a passion for building complete software: Android apps with Kotlin & Firebase, AI-powered systems like computer vision and deep learning, and interactive web experiences like the one you're exploring right now.",
+      "My journey began with school web projects and grew into a passion for building complete software: Android apps with Kotlin & Firebase, full-stack apps with Next.js & Express, AI-powered systems like computer vision and deep learning, Telegram bots, microservices architecture, and interactive web experiences like the one you're exploring right now.",
     about_p3:
       'My philosophy is simple: <span class="mono-accent">aesthetics + function = experience</span>. Every pixel and every line of code must earn its place.',
     stat_repo: "GitHub Repositories",
@@ -369,6 +394,10 @@ const I18N = {
     sk_ux: "Interface design & prototyping",
     sk_php: "Full-stack web",
     sk_ml: "Deep learning & computer vision",
+    sk_next: "Full-stack React & SSR",
+    sk_express: "RESTful API & backend",
+    sk_docker: "Containerization & deployment",
+    sk_tf: "CNN & neural networks",
     k_projects: "03 // FEATURED PROJECTS",
     h_projects: 'Work I\'m <span class="grad-text">proud of</span>',
     p_rinra:
@@ -389,7 +418,25 @@ const I18N = {
       "An Android daily journal & productivity app with real-time cloud sync and a clean Material 3 design.",
     p_porto:
       "The site you're exploring right now — WebGL particles, wireframe geometry, glassmorphism, and magnetic interactions.",
-    cta_repos: "Explore 27 Repositories on GitHub",
+    p_gemini:
+      "The MyDay Android app supercharged with Gemini API — AI as your daily productivity assistant.",
+    p_kamus:
+      "A modern full-stack Bugis Language Dictionary: Next.js, MongoDB, MinIO, Docker, complete with AI Chat feature.",
+    p_laundry:
+      "A full-stack online laundry app with Express.js, Prisma ORM, and automated testing.",
+    p_sentimen:
+      "Webtoon review sentiment analysis using SVM and Genetic Algorithm optimization.",
+    p_cnn:
+      "A CNN image classifier for distinguishing lunch boxes vs bottles with TensorFlow/Keras.",
+    p_micro:
+      "A mini microservices architecture project — Inventory, Order, and Payment services.",
+    p_bot:
+      "A Telegram bot for class schedule reminders with D-1 confirmation from class admins.",
+    p_simkripto:
+      "Simulation of 5 cryptography concepts — RSA, Digital Signature, SSL/TLS, and Blockchain.",
+    p_wallpaper:
+      "A web-based wallpaper editor — design & download wallpapers straight from your browser.",
+    cta_repos: "Explore 50+ Repositories on GitHub",
     k_cert: "04 // CERTIFICATES",
     h_cert: 'Proof of my <span class="grad-text">achievements</span>',
     c_ccna: "Certificate of completion for Cisco Networking Academy: Introduction to Networks.",
@@ -408,8 +455,8 @@ const I18N = {
     t2_p: "Completed a series of full-stack PHP capstone (UKK) projects, then officially became a CS student at FT Unismuh Makassar.",
     t3_h: "Expanding Horizons",
     t3_p: "Dived into algorithms with Java, tasted Next.js & TypeScript, built PHP web projects, and shipped the MyDay Android app.",
-    t4_h: "The AI & Security Era",
-    t4_p: "Ventured into deep learning (DiabetesAI), computer vision (Scan Plat AI), cryptography, and the MadrasahConnect platform.",
+    t4_h: "The AI, Full-Stack & Security Era",
+    t4_p: "Ventured into deep learning (DiabetesAI, CNN Classifier), computer vision (Scan Plat AI), NLP (Webtoon Sentiment), full-stack (Bugis Dictionary, CozyLab Laundry), Gemini AI, microservices, Telegram bots, cryptography, and the MadrasahConnect platform.",
     k_contact: "06 // CONTACT",
     h_contact:
       'Let\'s build something <span class="grad-text">extraordinary</span>',
@@ -429,8 +476,11 @@ const I18N = {
       "Android Developer",
       "Python Enthusiast",
       "Web Developer",
+      "Full-Stack Developer",
+      "AI Engineer",
       "Desktop Customizer",
       "UI/UX Explorer",
+      "Bot Developer",
     ],
   },
 };
